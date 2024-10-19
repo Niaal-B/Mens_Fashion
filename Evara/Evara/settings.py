@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'Home',
     'UserAuth',
-    
+    'Shop',
+    'Account',
 ]
 
 MIDDLEWARE = [

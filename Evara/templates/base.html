@@ -34,7 +34,7 @@
           <p class="header__alert-news">
             Super Values Deals - Save more coupons
           </p>
-          <a href="login-register.html" class="header__top-action">
+          <a href="{% url 'login' %}" class="header__top-action">
             Log In / Sign Up
           </a>
         </div>
@@ -62,7 +62,7 @@
               <a href="{% url 'index' %}" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
-              <a href="shop.html" class="nav__link">Shop</a>
+              <a href="{% url 'shop' %}" class="nav__link">Shop</a>
             </li>
             <li class="nav__item">
               <a href="accounts.html" class="nav__link">My Account</a>
