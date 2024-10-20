@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Login{% endblock %}
+{% block content %} 
+      <!--=============== LOGIN-REGISTER ===============-->
+      <section class="login-register section--lg">
+        <div class="login-register__container container grid">
+          <div class="login">
+            <h3 class="section__title">Login</h3>
+            <form class="form grid"  method="post">
+              {% csrf_token %}
+              <input
+                type="text"
+                placeholder="username"
+                class="form__input"
+                name="username"
+              />
+              <input
+                type="password"
+                placeholder="Your Password"
+                class="form__input"
+                name="password"
+              />
+              <div class="form__btn">
+                <button  type="submit" class="btn">Login</button>
+              </div>
+              <a href="{% url 'register' %}">Don't have an account?Register</a>
+              {{ error }}
+              </form>
+          </div>
+          
+        </div>
+      </section>
+{% endblock %}

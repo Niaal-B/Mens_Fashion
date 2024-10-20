@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<section class="login-register section--lg">
+    <div class="login-register__container container grid">
+        <div class="register">
+            <h3 class="section__title">Create an Account</h3>
+            <form class="form grid" method="POST">
+                {% csrf_token %}
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    class="form__input"
+                    required
+                />
+                <input
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                    class="form__input"
+                    required
+                />
+                <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Last Name"
+                    class="form__input"
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    class="form__input"
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Your Password"
+                    class="form__input"
+                    required
+                />
+                <input
+                    type="password"
+                    name="confirm_password"
+                    placeholder="Confirm Password"
+                    class="form__input"
+                    required
+                />
+                <div class="form__btn">
+                    <button type="submit" class="btn">Submit & Register</button>
+                </div>
+            </form>
+            {% if error_message %}
+                <p style="color:red;">{{ error_message }}</p>
+            {% endif %}
+            <a href="{% url 'login' %}">Have an account? Login</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
